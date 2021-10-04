@@ -39,16 +39,16 @@ time.sleep(1)
 
 #destination input box to select city
 destination_input = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > div.pvbrnm-10.fsPcKq > div > div.jzqfk3-8.qGDMI > div > div > input')
-time.sleep(0.5)
+time.sleep(1)
 
 #pick greece
 greece = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > div.pvbrnm-10.fsPcKq > div > div.jzqfk3-3.kHonhY > div > div:nth-child(1) > div > div.sc-1eezab2-4.kUiomX > ul:nth-child(1) > div:nth-child(4) > li > label > div').click()
 
-time.sleep(0.5)
+time.sleep(1)
 #find offer
 find_offer_button = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > footer > button').click()
 
-time.sleep(0.5)
+time.sleep(1)
 '''#filter tab and click
 filter_button = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.sc-1uud2qw-0.gbzKDU > div.sc-1qhb28-0.ciDFDc > div > button').click()
 time.sleep(1)'''
@@ -56,22 +56,19 @@ time.sleep(1)'''
 #select max date
 smax = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(2) > div.sc-106s0lo-8.Papwz > div > div:nth-child(2) > div.sc-1u36cim-0.kyonzr > div').click()
 smax_value = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(2) > div.sc-106s0lo-8.Papwz > div > div:nth-child(2) > div.sc-1u36cim-0.kyonzr > div > div.sc-1u36cim-8.jfqeUf > span:nth-child(10)').click()
+time.sleep(1)
+
+
 
 #select all-inclusive
 all_inc = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(3) > div.sc-106s0lo-8.Papwz > div > div:nth-child(1) > div > div').click()
 time.sleep(0.5)
-#stars hotel
-star_hotel = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(4) > div.sc-106s0lo-8.Papwz > div > div:nth-child(3) > div').click()
-time.sleep(0.5)
+
 #price input
 price_inp = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(5) > div.sc-106s0lo-8.Papwz > div > div.sc-12w6ps2-0.kMMrnS > div > div:nth-child(2) > div.dc9rez-0.eddCmn > div > input')
 price_inp.send_keys('3000')
 time.sleep(0.5)
-'''#first_minute
-fm = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > div.pvbrnm-10.dkwuxg > div.sc-106s0lo-0.gIxfsr > div:nth-child(7) > div.sc-106s0lo-8.Papwz > div > div:nth-child(1) > div > div').click()
-time.sleep(0.5)
-#pre_sale
-ps = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > div.pvbrnm-10.dkwuxg > div.sc-106s0lo-0.gIxfsr > div:nth-child(7) > div.sc-106s0lo-8.Papwz > div > div:nth-child(2) > div > div').click()
-time.sleep(1)'''
-#last_minute
-#lm = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > div.pvbrnm-10.dkwuxg > div.sc-106s0lo-0.gIxfsr > div:nth-child(7) > div.sc-106s0lo-8.Papwz > div > div:nth-child(3) > div > div').click()
+
+#star hotel
+#user review
+#last minute/first minute/bonus 
