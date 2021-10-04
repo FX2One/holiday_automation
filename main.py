@@ -10,9 +10,8 @@ from selenium.webdriver.chrome.options import Options
 options = Options()
 options.add_argument("--window-size=1920,1080")
 
-
 PATH = 'C:\Program Files (x86)\chromedriver.exe'
-#driver = webdriver.Chrome(PATH)
+
 driver = webdriver.Chrome(PATH, options=options)
 
 driver.get('https://www.wakacje.pl/wczasy/')
@@ -21,6 +20,21 @@ driver.get('https://www.wakacje.pl/wczasy/')
 cookie_clause = WebDriverWait(driver, 5).until(
     EC.element_to_be_clickable(
         (By.XPATH, "/html/body/div[3]/div/div[2]/div[3]/div/button[2]"))).click()
+
+#user rating
+user_rating = WebDriverWait(driver, 5).until(
+    EC.element_to_be_clickable(
+        (By.XPATH, '//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[5]/div[2]/div/div/div[2]/div/div[1]'))).click()
+
+#user rating above 8.5
+user_rating_above = WebDriverWait(driver, 5).until(
+    EC.element_to_be_clickable(
+        (By.XPATH, '//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[5]/div[2]/div/div/div[2]/div/div[2]/span[7]'))).click()
+
+#first minute
+fm = WebDriverWait(driver, 20).until(
+    EC.element_to_be_clickable(
+        (By.XPATH, '//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[6]/div[2]/div/div[1]/div/div'))).click()
 
 #find airport tab and click
 airport = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-5.hRtwjI > section > div > div > div > div:nth-child(3) > div > div').click()
@@ -47,28 +61,34 @@ greece = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.p
 time.sleep(1)
 #find offer
 find_offer_button = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > footer > button').click()
-
 time.sleep(1)
-'''#filter tab and click
-filter_button = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.sc-1uud2qw-0.gbzKDU > div.sc-1qhb28-0.ciDFDc > div > button').click()
-time.sleep(1)'''
 
 #select max date
 smax = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(2) > div.sc-106s0lo-8.Papwz > div > div:nth-child(2) > div.sc-1u36cim-0.kyonzr > div').click()
 smax_value = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(2) > div.sc-106s0lo-8.Papwz > div > div:nth-child(2) > div.sc-1u36cim-0.kyonzr > div > div.sc-1u36cim-8.jfqeUf > span:nth-child(10)').click()
 time.sleep(1)
 
-
-
 #select all-inclusive
 all_inc = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(3) > div.sc-106s0lo-8.Papwz > div > div:nth-child(1) > div > div').click()
-time.sleep(0.5)
+time.sleep(2)
 
 #price input
 price_inp = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(5) > div.sc-106s0lo-8.Papwz > div > div.sc-12w6ps2-0.kMMrnS > div > div:nth-child(2) > div.dc9rez-0.eddCmn > div > input')
 price_inp.send_keys('3000')
-time.sleep(0.5)
+time.sleep(2)
 
 #star hotel
-#user review
-#last minute/first minute/bonus 
+star_hotel = driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[3]/div[2]/div/div[3]/div').click()
+time.sleep(2)
+
+#last minute
+last_minute = WebDriverWait(driver, 5).until(
+    EC.element_to_be_clickable(
+        (By.XPATH, '//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[6]/div[2]/div/div[3]/div/div'))).click()
+
+#search for final offer
+final_offer =WebDriverWait(driver, 5).until(
+    EC.element_to_be_clickable(
+        (By.XPATH, '//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[11]/div/button'))).click()
+
+
