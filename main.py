@@ -19,7 +19,7 @@ driver.get('https://www.wakacje.pl/wczasy/')
 #accept cookies
 cookie_clause = WebDriverWait(driver, 5).until(
     EC.element_to_be_clickable(
-        (By.XPATH, "/html/body/div[3]/div/div[2]/div[3]/div/button[2]"))).click()
+        (By.XPATH, '/html/body/div[3]/div/div[2]/div[3]/div/button[2]'))).click()
 
 #user rating
 user_rating = WebDriverWait(driver, 5).until(
@@ -27,7 +27,7 @@ user_rating = WebDriverWait(driver, 5).until(
         (By.XPATH, '//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[5]/div[2]/div/div/div[2]/div/div[1]'))).click()
 
 #user rating above 8.5
-user_rating_above = WebDriverWait(driver, 5).until(
+ur_above = WebDriverWait(driver, 5).until(
     EC.element_to_be_clickable(
         (By.XPATH, '//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[5]/div[2]/div/div/div[2]/div/div[2]/span[7]'))).click()
 
@@ -64,10 +64,10 @@ find_offer_button = driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/f
 time.sleep(1)
 
 #select max date
-#smax = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(2) > div.sc-106s0lo-8.Papwz > div > div:nth-child(2) > div.sc-1u36cim-0.kyonzr > div').click()
 smax = driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div').click()
 
-smax_value = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(2) > div.sc-106s0lo-8.Papwz > div > div:nth-child(2) > div.sc-1u36cim-0.kyonzr > div > div.sc-1u36cim-8.jfqeUf > span:nth-child(10)').click()
+smax_value = driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/span[10]').click()
+
 time.sleep(1)
 
 #select all-inclusive
