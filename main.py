@@ -32,19 +32,19 @@ user_rating_above = WebDriverWait(driver, 5).until(
         (By.XPATH, '//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[5]/div[2]/div/div/div[2]/div/div[2]/span[7]'))).click()
 
 #first minute
-fm = WebDriverWait(driver, 20).until(
+first_minute = WebDriverWait(driver, 20).until(
     EC.element_to_be_clickable(
         (By.XPATH, '//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[6]/div[2]/div/div[1]/div/div'))).click()
 
 #find airport tab and click
-airport = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-5.hRtwjI > section > div > div > div > div:nth-child(3) > div > div').click()
-time.sleep(1)
+airport = driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/main/div/div[1]/section/div/div/div/div[3]/div/div').click()
+time.sleep(3)
 
 #select airport
-poznan_airport = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > div.pvbrnm-10.fsPcKq > div > div.sc-6yp7mv-3.glPYjl > div > div:nth-child(1) > div > div.sc-1eezab2-4.kUiomX > div > div:nth-child(2) > ul > li:nth-child(9) > label > div').click()
+poznan_airport = driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[2]/div/div/div[2]/div/div[1]/div/div[1]/div/div[2]/ul/li[9]/label/div').click()
 time.sleep(1)
 #search offer
-poznan_search_offer = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > footer > button').click()
+poznan_search_offer = driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/footer/button').click()
 time.sleep(1)
 
 #destination tab
@@ -52,28 +52,31 @@ destination_div = driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/mai
 time.sleep(1)
 
 #destination input box to select city
-destination_input = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > div.pvbrnm-10.fsPcKq > div > div.jzqfk3-8.qGDMI > div > div > input')
+destination_input = driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/main/div/div[1]/section/div/div/div/div[1]/div/div/div/input')
 time.sleep(1)
 
 #pick greece
-greece = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > div.pvbrnm-10.fsPcKq > div > div.jzqfk3-3.kHonhY > div > div:nth-child(1) > div > div.sc-1eezab2-4.kUiomX > ul:nth-child(1) > div:nth-child(4) > li > label > div').click()
+greece = driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[2]/div/div/div[3]/div/div[1]/div/div[1]/ul[2]/div[48]/li/label/div').click()
 
-time.sleep(1)
+time.sleep(5)
 #find offer
-find_offer_button = driver.find_element_by_css_selector('body > div.pvbrnm-2.dWhXgX > div.pvbrnm-3.eARhAG > div > footer > button').click()
+find_offer_button = driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/footer/button').click()
 time.sleep(1)
 
 #select max date
-smax = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(2) > div.sc-106s0lo-8.Papwz > div > div:nth-child(2) > div.sc-1u36cim-0.kyonzr > div').click()
+#smax = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(2) > div.sc-106s0lo-8.Papwz > div > div:nth-child(2) > div.sc-1u36cim-0.kyonzr > div').click()
+smax = driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div').click()
+
 smax_value = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(2) > div.sc-106s0lo-8.Papwz > div > div:nth-child(2) > div.sc-1u36cim-0.kyonzr > div > div.sc-1u36cim-8.jfqeUf > span:nth-child(10)').click()
 time.sleep(1)
 
 #select all-inclusive
-all_inc = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(3) > div.sc-106s0lo-8.Papwz > div > div:nth-child(1) > div > div').click()
+all_inc = driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[2]/div[2]/div/div[1]/div/div').click()
 time.sleep(2)
 
 #price input
-price_inp = driver.find_element_by_css_selector('#__next > div > div.sc-1lbbeas-0.hTDHIm > main > div > div.us6ked-0.dILvMr > aside > div > div:nth-child(5) > div.sc-106s0lo-8.Papwz > div > div.sc-12w6ps2-0.kMMrnS > div > div:nth-child(2) > div.dc9rez-0.eddCmn > div > input')
+
+price_inp = driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/main/div/div[4]/aside/div/div[4]/div[2]/div/div[1]/div/div[2]/div[2]/div/input')
 price_inp.send_keys('3000')
 time.sleep(2)
 
