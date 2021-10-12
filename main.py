@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
@@ -36,7 +35,8 @@ airport = WebDriverWait(driver, timer).until(
 #select airport
 poznan_airport = WebDriverWait(driver, timer).until(
     EC.element_to_be_clickable(
-        (By.XPATH, '/html/body/div[3]/div[1]/div/div[2]/div/div/div[2]/div/div[1]/div/div[1]/div/div[2]/ul/li[9]/label/div'))).click()
+        #(By.XPATH, '/html/body/div[4]/div[1]/div/div[2]/div/div/div[2]/div/div[1]/div/div[1]/div/div[2]/ul/li[10]/label/div'))).click()
+        (By.XPATH, '/html/body/div[3]/div[1]/div/div[2]/div/div/div[2]/div/div[1]/div/div[1]/div/div[2]/ul/li[10]/label/div'))).click()
 
 #search offer
 poznan_search_offer = WebDriverWait(driver, timer).until(
@@ -57,7 +57,7 @@ destination_input = driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/m
 #pick greece
 greece = WebDriverWait(driver, timer).until(
     EC.element_to_be_clickable(
-        (By.XPATH, '/html/body/div[3]/div[1]/div/div[2]/div/div/div[3]/div/div[1]/div/div[1]/ul[2]/div[48]/li/label/div'))).click()
+        (By.XPATH, '/html/body/div[3]/div[1]/div/div[2]/div/div/div[3]/div/div[1]/div/div[1]/ul[1]/div[3]/li/label/div'))).click()
 
 
 #find offer
